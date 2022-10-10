@@ -1,0 +1,30 @@
+\documentclass[letterpaper,
+                fontsize=10pt]{kaobook}
+
+\usepackage[english]{babel}
+
+% kaobook related packages
+\usepackage{kaobiblio}
+\usepackage[framed=true]{kaotheorems}
+\usepackage{kaorefs}
+
+\makeindex[columns=3, title=Alphabetical Index, intoc]
+
+\begin{document}
+
+    \title[Number Theory]{Number Theory}
+    \subtitle{Lecture and Seminar Notes}
+
+    \author[Sarah Mantell]{Sarah Mantell}
+
+    \date{\today}
+
+    \frontmatter
+    \maketitle
+
+
+    \mainmatter
+
+    \setchapterstyle{kao}
+    \input{Chapters/algNumberTheory.tex}
+\end{document}
