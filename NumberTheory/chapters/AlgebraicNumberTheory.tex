@@ -3,12 +3,12 @@
 \chapter{Algebraic Number Theory}
 \labch{algNumberTheory}
 
-\begin{definition}
+\begin{definition}[Number field]
     \labdef{numberField}
     A number field is a finite field extension over $\Q$.
 \end{definition}
 
-\begin{definition}
+\begin{definition}[Algebraic integer]
     \labdef{algebraicInteger}
     Let $K$ be a number field. An algebraic number $a \in K$ is called integral or an algebraic integer of $K$ if $f(a) = 0$ for some monic polynomial $f$ with coefficients in $\Z$. Denote the set of algebraic integers in $K$ by $\mathcal{O}_{K}$.
 \end{definition}
@@ -43,8 +43,9 @@ Notice that the results presented in the proposition above imply that $\mathcal{
     \refthm{uniqueFactIdeals} is actually true for any Dedekind domain, but we just focus on this specific case here.
 }
 
-\begin{definition}[trace, norm]
-    \labdef{traceNorm}
+\begin{definition}[Trace, Norm]
+    \labdef{trace}
+    \labdef{norm}
     Suppose that $\Q \sq K \sq L$ is an extension of fields. Let $a \in L$ and view $L$ as a $K$-vector space to consider the linear transformation
         \[T_a: L \to L\]
         \[x\mapsto ax. \]
@@ -54,12 +55,13 @@ Notice that the results presented in the proposition above imply that $\mathcal{
         \[\textrm{Nm}_{L/K}(a) = \textrm{det}(T_a) \in K.\]
 \end{definition}
 
-With trace and norm defined as in \refdef{traceNorm}, we obtain a bi-$K$-linear pairing:
+With trace and norm defined as in \refdef{trace}, we obtain a bi-$K$-linear pairing:
 
     \[\langle , \rangle_{L/K}: L \times K \to K\]
 given by
     \[\langle a, \rangle_{L/K} = \textrm{Tr}_{L/K}(ab).\]
-\begin{definition}
+\begin{definition}[Discriminant]
+    \labdef{discriminant}
     Let $\alpha_1, \ldots, \alpha_n$ be a basis of $L$ over $K$. The discriminant of $\alpha_1, \ldots, \alpha_n$ is defined as
         \[D(\alpha_1, \ldots, \alpha_n) = \det\left(\begin{pmatrix}
             \langle \alpha_i, \alpha_j\rangle
