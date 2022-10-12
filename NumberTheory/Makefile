@@ -9,3 +9,4 @@ clean:
 	@rm -f *.dvi *.mw *.ps *.synctex
 all:
 	latexmk -pdf ${TEXFILENAME}
+	make clean
