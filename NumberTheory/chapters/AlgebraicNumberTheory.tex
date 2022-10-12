@@ -60,6 +60,7 @@ With trace and norm defined as in \refdef{traceNorm}, we obtain a bi-$K$-linear 
 given by
     \[\langle a, b\rangle_{L/K} = \textrm{Tr}_{L/K}(ab).\]
 \begin{definition}
+    \labdef{discriminant}
     Let $\alpha_1, \ldots, \alpha_n$ be a basis of $L$ over $K$. The discriminant of $\alpha_1, \ldots, \alpha_n$ is defined as
         \[D(\alpha_1, \ldots, \alpha_n) = \det\left(\begin{pmatrix}
             \langle \alpha_i, \alpha_j\rangle
@@ -77,3 +78,30 @@ given by
 
 For $K/\Q$, $\mathcal{O}_{\Q} = \Z$ and therefore is a PID. So, $\mathcal{O}_{K}$ is a free $\Z$-module of rank $n = [K:\Q]$. For any $\Z$-basis $\alpha_1, \ldots, \alpha_n$ of $\mathcal{O}_{K}$,
     \[D_{K/\Q} = (D(\alpha_1, \ldots, \alpha_n)).\]
+
+\begin{definition}
+    \labdef{ramification-index}
+    Let $L/K$ be an extension of number fields, $\mathcal{p} \sq \mathcal{O}_{L}$ a nonzero prime ideal, and define $\mathfrak{p} = \mathcal{p}\cap \mathcal{O}_{K} \sq \mathcal{O}_{K}$. Write the prime factorization of $\mathfrak{p}\mathcal{O}_{L}$ as
+    \[\mathfrak{p}\mathcal{O}_{L} = \mathcal{p}_1^{e_1}\cdots \mathcal{p}_m^{e_m}\]
+    where $\mathcal{p}_1 = \mathcal{p}$. The ramification index of $\mathcal{p}$ over $\mathfrak{p}$, denoted by $e(\mathcal{p}/\mathfrak{p})$, is defined to be $e_1$ (as given in the prime factorization). The residue class degree, or the intertia degree, of $\mathcal{p}$ of $\mathfrak{p}$, denoted by $e(\mathcal{p}/\mathfrak{p})$, is defined to be $[\mathcal{O}_{L}/\mathcal{p}: \mathcal{O}_{K}/\mathfrak{p}]$.
+\end{definition}
+
+\begin{definition}
+    \labdef{ramified}
+    Let $L/K$ be an extension of number fields and $\mathfrak{p} \sq \mathcal{O}_{K}$ a nonzero prime ideal. We say $\mathfrak{p}$ is ramified in $L$ or $L/K$ is ramified at $\mathfrak{p}$ if $e(\mathcal{p}/\mathfrak{p}) > 1$ for some $\mathcal{p} \sq \mathcal{O}_{L}$ satisfying $\mathfrak{p} = \mathcal{p}\cap \mathcal{O}_{K}$. We say $\mathfrak{p}$ is unramified in $L$ or $L/K$ is unramified at $\mathfrak{p}$ if $e(\mathcal{p}/\mathfrak{p}) =1$ for every $\mathcal{p} \sq \mathcal{O}_{L}$ where $\mathfrak{p} = \mathcal{p}\cap \mathcal{O}_{K}$.
+\end{definition}
+
+\begin{definition}
+    \labdef{splits}
+    Let $L/K$ be an extension of number fields and $\mathfrak{p} \sq \mathcal{O}_{K}$ a nonzero prime ideal. We say $\mathfrak{p}$ splits or splits completely in $L$ if $e(\mathcal{p}/\mathfrak{p}) = f(\mathcal{p}/\mathfrak{p}) = 1$ for every $\mathcal{p} \sq \mathcal{O}_{L}$ with $\mathcal{p} \cap \mathcal{O}_{K} = \mathfrak{p}$.
+\end{definition}
+
+\begin{definition}
+    \labdef{inert}
+    Let $L/K$ be an extension of number fields and $\mathfrak{p} \sq \mathcal{O}_{K}$ a nonzero prime ideal. We say that $\mathfrak{p}$ is inert in $L$ if $\mathfrak{p}\mathcal{O}_{L}$ is a prime ideal of $\mathcal{O}_{L}$.
+\end{definition}
+
+From these definitions, one can derive the following identity: if $\mathfrak{p} \mathcal{O}_{L} = \mathcal{p}_1^{e_1}\cdots \mathcal{p}_m^{e_m}$ then 
+
+    \[[L:K] = \sum_{j=1}^m e(\mathcal{p}_j/\mathfrak{p}_j)f(\mathit{p}_j/\mathfrak{p}_j).\]
+
