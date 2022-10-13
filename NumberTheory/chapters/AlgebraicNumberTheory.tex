@@ -3,6 +3,8 @@
 \chapter{Algebraic Number Theory}
 \labch{algNumberTheory}
 
+\section{General Definitions}
+
 \begin{definition}[Number field]
     \labdef{numberField}
     A number field is a finite field extension over $\Q$.
@@ -107,3 +109,87 @@ From these definitions, one can derive the following identity: if $\mathfrak{p} 
     \[[L:K] = \sum_{j=1}^m e(\mathcal{p}_j/\mathfrak{p}_j)f(\mathit{p}_j/\mathfrak{p}_j).\]
 
 %%%% There should be some notes here -- think i need to pull from desktop
+
+\begin{proposition}
+    Let $K$ be a number field. Every fractional ideal $\mathfrak{a}$ of $K$ can be written uniquely in the form 
+        \[\mathfrak{a} = \prod_{\mathfrak{p}} \mathfrak{p}^{r_\mathfrak{p}}\]
+    where the product is taken over all the nonzero prime ideals of $\mathcal{O}_{K}$, each $r_\mathfrak{p} \in \Z$, and almost every $r_\mathfrak{p}$ is zero.
+\end{proposition}
+
+\begin{remark}
+    With these definitions, $I_K$ is the free abelian group on the set of nonzero prime ideals of $\mathcal{O}_{K}$.
+\end{remark}
+
+Define a subgroup of $I_K$ by
+    \[P_K = \left\{ (a) = a \mathcal{O}_{K}: a \in K^\times \right\}.\]
+
+\begin{definition}[Ideal class group, Class group]
+    \labdef{class-group, ideal-class-group}
+    The ideal class group or class group of $K$ is defined as 
+        \[\textrm{Cl}(K) = I_K/P_K.\]
+\end{definition}
+
+\begin{theorem}
+    For any number field $K$, the class group $\textrm{Cl}(K)$ is finite.
+\end{theorem}
+
+\begin{definition}[Class number]
+    \labdef{class-number}
+    The class number of a number field $K$ is the order of the class group $\textrm{Cl}(K)$.
+\end{definition}
+
+The proof that the class number of a given number field is indeed finite uses Minkowski Theory.
+
+For a number field $K$, let $r_k$ denote the number of real embeddings of $K$ into $\R$ and $s_k$ denote the number of pairs of complex embeddings of $K$ into $\C$. Here we are assuming that $s_k$ is counting the pairs of embeddings that are not strictly contained in $\R$. Note that the complex embeddings occur in pairs through complex conjugation.
+
+\begin{theorem}[Dirichlet's Unit Theorem]
+    Suppose that $K$ is a number field and $\mu(K)$ is the finite group of roots of unity that are contained in $K$. Then,
+        \[\mathcal{O}_{K}^\times \cong \Z^{r_k + s_k -1} \times \mu(K).\]
+\end{theorem}
+
+\begin{definition}[Decomposition group]
+    \labdef{decomposition-group}
+    Suppose that $L/K$ is a Galois extension of number fields, $\wp \sq L$ is a prime ideal, and $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$. The decomposition group of $\wp$ is the set 
+        \[G_\wp = \{\sigma \in \textrm{Gal}(L/K): \sigma(\wp) = \wp\}.\]
+\end{definition}
+
+\marginnote{Need to check the assumptions here -- where is $\wp$ living? Nonzero?}
+
+\begin{definition}[Inertia group]
+    \labdef{intertia-group}
+    Let $\kappa = \mathcal{O}_{K}/\mathfrak{p}$ and $\lambda = \mathcal{O}_{L}/\wp$. The kernel of the map
+        \[G_\wp \to \textrm{Aut}(\lambda/\kappa)\]
+    is the inertia group of $\wp$ and is denoted by $I_\wp$. 
+\end{definition}
+
+\section{Valuations and Absolute Values}
+
+In general, assume hereafter that $p$ denotes some prime number.
+
+\begin{definition}[$p$-adic absolute value, $p$-adic norm]
+    \labdef{padic-norm}
+    The $p$-adic absolute value or norm of $\Q$
+        \[|\cdot |_p: \Q \to \R\]
+    is defined by
+        \[\left| p^m \frac{a}{b}\right|_{p} = p^{-m}\]
+    where both $a$ and $b$ are coprime to $p$. Set $|0|_p = 0$.
+\end{definition}
+
+\begin{proposition}
+    The $p$-adic norm is indeed a norm. That is:
+
+    \begin{enumerate}
+        \item $|a|_p > 0$ for all $a \in \Q^\times$
+        \item $|ab|_p = |a|_p|b|_p$
+        \item $|a + b|_p \leq |a|_p + |b|_p$
+    \end{enumerate}
+\end{proposition}
+
+The $p$-adic norm actually satsifies a stronger version of the triangle inequality:
+$|a + b|_p \leq \max\{ |a|_p ,|b|_p\}$. Since we have now equipped $\Q$ with a norm, it can be viewed as a topological space and thus there is a notion of convergence and Cauchy sequences. In particular, we are interested in studying the completion of $\Q$ with respect to a given $p$-adic norm.
+
+\begin{definition}[$p$-adic numbers]
+    Let $\Q_p$ be the completion of $\Q$ with respect to the $p$-adic norm. The elements of $\Q_p$ are called the $p$-adic numbers.
+\end{definition}
+
+Using properties of limits and the fact that every element of $\Q_p$ can be represented as the limit of a sequence of points in $\Q$, the addition and multiplication of $\Q$ can be naturally extended to $\Q_p$. Likewise, the norm $|\cdot|_p$ can be extended to a norm on $\Q_p$. With these operations, $\Q_p$ is a field that contains $\Q$ as a subfield.
