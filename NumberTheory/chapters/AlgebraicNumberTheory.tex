@@ -185,11 +185,31 @@ In general, assume hereafter that $p$ denotes some prime number.
     \end{enumerate}
 \end{proposition}
 
-The $p$-adic norm actually satsifies a stronger version of the triangle inequality:
+The $p$-adic norm actually satisfies a stronger version of the triangle inequality:
 $|a + b|_p \leq \max\{ |a|_p ,|b|_p\}$. Since we have now equipped $\Q$ with a norm, it can be viewed as a topological space and thus there is a notion of convergence and Cauchy sequences. In particular, we are interested in studying the completion of $\Q$ with respect to a given $p$-adic norm.
 
 \begin{definition}[$p$-adic numbers]
+    \labdef{p-adic-numbers}
     Let $\Q_p$ be the completion of $\Q$ with respect to the $p$-adic norm. The elements of $\Q_p$ are called the $p$-adic numbers.
 \end{definition}
 
 Using properties of limits and the fact that every element of $\Q_p$ can be represented as the limit of a sequence of points in $\Q$, the addition and multiplication of $\Q$ can be naturally extended to $\Q_p$. Likewise, the norm $|\cdot|_p$ can be extended to a norm on $\Q_p$. With these operations, $\Q_p$ is a field that contains $\Q$ as a subfield.
+
+\begin{definition}[$p$-adic integers]
+    \labdef{p-adic-integers}
+    Define the ring of $p$-adic integers to be the subset of $\Q_p$ given by
+        \[\Z_p = \left\{a \in \Q_p: |a|_p \leq 1\right\}.\]
+\end{definition}
+
+One can easily see that the set of units is $\Z_p^\times = \{a \in \Q_p: |a|_p =1 \}$.
+
+\begin{example}
+    The polynomial $x^{p-1} -1$ is solvable of $\Q_p$.
+\end{example}
+
+\begin{definition}[$p$-adic valuation]
+    \labdef{padic-valuation}
+    The $p$-adic valuation of $\Q$ is given by
+        \[\nu_p: \Q \to \R \cup \{\infty\} \]
+    where $\nu_p(p^m\frac{a}{b}) = m$ and both $
+\end{definition}
