@@ -140,10 +140,6 @@ One can define a multiplication on the collection of fractional ideals of $K$: i
     With this structure, the identity is $\mathcal{O}_{K}$ and the inverse of $\mathfrak{a}$ is $\mathfrak{a}^{-1} = \{x \in K| x \mathfrak{a} \sq \mathcal{O}_{K}\}$.
 \end{proposition}
 
-
-
-%%%% There should be some notes here -- think i need to pull from desktop
-
 \begin{proposition}
     Let $K$ be a number field. Every fractional ideal $\mathfrak{a}$ of $K$ can be written uniquely in the form 
         \[\mathfrak{a} = \prod_{\mathfrak{p}} \mathfrak{p}^{r_\mathfrak{p}}\]
@@ -350,5 +346,18 @@ Now that a field $K$ can be equipped with a norm, we can construct a completion 
     The pair $(K, |\cdot|)$ is complete if every Cauchy sequence converges in $K$ (with respect to the $|\cdot|$ norm.)
 \end{definition}
 
-Given any $(K, |\cdot|)$, we can always find a completion $\hat{K}$ and naturally extend $|\cdot|$ to $\hat{K}$.
->>>>>>> 2a2dbcd (More notes.)
+Given any $(K, |\cdot|)$, we can always find a completion $\hat{K}$ and naturally extend $|\cdot|$ to $\hat{K}$. This new pair, $(\hat{K}, |\cdot|)$ is a complete valued field. When the absolute value $|\cdot|$ is nonarchimedean, the natural embedding
+    \[\mathcal{O}_{K}_\mathfrak{p} \hookrightarrow \mathcal{O}_{\hat{K}}/\mathfrak{p}_{\hat{K}}\]
+of residue classes is an isomorphism.
+
+\begin{example}
+    The completion of $\Q$ with respect to $|\cdot|_\infty$ is $\R$. The completion of $\Q$ with respect to $|\cdot|_p$ is $\Q_p$.
+\end{example}
+
+\begin{theorem}[Hensel's Lemma]
+    Let $K$ be a complete discrete valued field with valuation ring $\mathcal{O}$ and maximal ideal $\mathfrak{p}$. Suppose that a polynomial $f(x) \in \mathcal{O}[x] - \mathfrak{p}[x]$ can be factored as
+        \[\ol{f}(x) = \ol{g}(x)\ol{h}(x)\]
+    in $\mathcal{O}/\mathfrak{p}[x]$, with $\ol{g}(x)$ and $\ol{h}(x)$ coprime. Then, $f(x)$ has a factorization
+        \[f(x) = g(x) h(x)\]
+    in $\mathcal{O}[x]$ such that $g(x) \equiv \ol{g}(x) \textrm{ mod}(\mathfrak{p})$ and $h(x) \equiv \ol{h}(x) \textrm{ mod}(\mathfrak{p})$.
+\end{theorem}
