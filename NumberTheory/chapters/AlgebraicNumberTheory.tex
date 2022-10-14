@@ -245,5 +245,110 @@ One can easily see that the set of units is $\Z_p^\times = \{a \in \Q_p: |a|_p =
     \labdef{padic-valuation}
     The $p$-adic valuation of $\Q$ is given by
         \[\nu_p: \Q \to \R \cup \{\infty\} \]
-    where $\nu_p(p^m\frac{a}{b}) = m$ and both
+    where $\nu_p(p^m\frac{a}{b}) = m$ and both $a$ and $b$ are coprime to $p$. The $p$-adic valuation can be extended to $\Q_p$ by letting $\nu_p(p^m a) = m$ where $a \in \Z_p^\times$. 
 \end{definition}
+
+\begin{proposition}
+    The $p$-adic valuation satisfies the following:
+
+    \begin{enumerate}
+        \item $\nu_p(a) = \infty$ if and only if $a = 0$
+        \item $\nu_p(ab) = \nu_p(a) + \nu_p(b)$
+        \item $\nu_p(a+b) = \min\{\nu_p(a), \nu_p(b)\}$
+    \end{enumerate}
+    
+    Furthermore, the $p$-adic valuation and $p$-adic absolute value have the following relation:
+    \[|a|_p = p^{-\nu_p(a)} \quad \nu_p(a) = -\log_p|a|_p.\]
+\end{proposition}
+
+\begin{definition}[Absolute value, Nonarchimedean]
+    \labdef{absolute-value}
+    \labdef{nonarchimedean}
+    An absolute value, or multiplicative valuation, of a field $K$ is a function $|\cdot|: K \to \R_{\geq 0}$ such that
+
+    \begin{enumerate}[(1)]
+        \item $|x| = 0$ if and only if $x = 0$
+        \item $|xy| = |x|\cdot |y|$
+        \item $|x+y| \leq |x| + |y|$ \label{av-def-lab}
+    \end{enumerate}
+
+    If instead of \ref{av-def-lab}, the stronger condition
+        \[|x+y| \leq \max\{|x|, |y|\}\]
+    holds, then $|\cdot|$ is a nonarchimedean absolute value.
+\end{definition}
+
+\begin{definition}[Equivalent]
+    \labdef{equivalent-absolute-values}
+    Two absolute values are equivalent if they induce the same topology.
+\end{definition}
+
+Using topological properties, one can show that two norms $|\cdot|_1, |\cdot|_2$ on $K$ are equivalent if and only if there exists $s \in \R_{>0}$ such that $|x|_1 = |x|_2^s$ for all $x \in K$. In particular, if there exists $x \in K$ where $|x|_1 \geq 1$ and $|x|_2 < 1$ the two norms are \emph{not} equivalent.
+
+\begin{definition}[Additive valuation, Valuation]
+    \labdef{additive-valuation}
+    \labdef{valuation}
+    An additive valuation on a field $K$ is a function $\nu: K \to \R \cup \{\infty\}$ such that 
+    \begin{enumerate}[(1)]
+        \item $\nu(x) = \infty$ if and only if  $x = 0$
+        \item $\nu(xy) = \nu(x) + \nu(y)$
+        \item $\nu(x+y) \geq \min\{\nu(x), \nu(y)\}$.
+    \end{enumerate}
+\end{definition}
+
+With these definitions, the collection of valuations and collection of nonarchimedean absolute values are related by the exponential and logarithmic functions. With this relationships, we can define the following:
+
+\begin{definition}[Equivalent valuations]
+    \labdef{equivalent-valuations}
+    Two valuations are equivalent if their corresponding absolute values are equivalent (see \refdef{equivalent-absolute-values}).
+\end{definition}
+
+\begin{proposition}
+    Every absolute value of $\Q$ is either the usual Euclidean absolute value or is equivalent to $|\cdot|_p$ for some prime $p$.
+\end{proposition}
+
+From hereafter, $|\cdot|_\infty$ is used to denote the Euclidean absolute value.
+
+\begin{definition}[Residue class field, Valuation ring]
+    \labdef{residue-class-field}
+    \labdef{valuation-ring}
+    Let $K$ be a field with valuation $\nu$. The local ring \sidenote{A \textbf{local ring} is a ring with a unique maximal ideal.}
+
+    \[ \mathcal{O} = \left\{x \in K: \nu(x) \geq 0\right\}\]
+
+    is the valuation ring for $K$. The unique maximal ideal of $\mathcal{O}$ is 
+        \[\mathfrak{p} \left\{x \in K: \nu(x) > 0\right\}\]
+    the units are
+        \[\mathcal{O}^\times = \left\{x \in K : \nu(x) = 0\right\}\]
+    The field $\mathcal{O}/\mathfrak{p}$ is the residue class field of $\mathcal{O}$.
+\end{definition}
+
+\begin{definition}[Discrete valuation]
+
+    \labdef{discrete-valuation}
+    A valuation $\nu$ on $K$ is called discrete if $\nu(K^\times) = s\Z$ for some $s \in \R_{>0}$.
+\end{definition}
+
+\begin{definition}[Uniformizer]
+    \labdef{uniformizer}
+    Assume that $\nu$ is a discrete valuation with $\nu(K^\times) = s\Z$. An element $\varpi \in K$ is a uniformizer if $\nu(\varpi) = s$.
+\end{definition}
+
+Alternatively, we can think of the uniformizer as follows: $\varpi$ is a uniformizer if and only if $\varpi$ generates the unique maximal ideal of the valuation ring.\\
+
+If $\nu$ is a discrete valuation, then it can be normalized to a valuation $\nu'(x) = s\inv \nu(x)$.  From this definition, $\nu$ and $\nu'$ are equivalent and $\nu'(K^\times) = \Z$. Once normalized, an element $\varpi$ is a uniformizer if and only if $\nu'(\varpi) = 1$.
+
+\begin{proposition}
+    Let $K$ be a field with a discrete valuation. Then, the corresponding valuation ring is a discrete valuation ring \sidenote{A discrete valuation ring is a local PID that is not a field.}.
+\end{proposition}
+
+\subsection{Completions}
+
+Now that a field $K$ can be equipped with a norm, we can construct a completion of $K$ with respect to any $p$-adic norm. The definition of completeness is the usual:
+
+\begin{definition}[Complete]
+    \labdef{complete}
+    The pair $(K, |\cdot|)$ is complete if every Cauchy sequence converges in $K$ (with respect to the $|\cdot|$ norm.)
+\end{definition}
+
+Given any $(K, |\cdot|)$, we can always find a completion $\hat{K}$ and naturally extend $|\cdot|$ to $\hat{K}$.
+>>>>>>> 2a2dbcd (More notes.)
