@@ -298,9 +298,10 @@ With these definitions, the collection of valuations and collection of nonarchim
     Two valuations are equivalent if their corresponding absolute values are equivalent (see \refdef{equivalent-absolute-values}).
 \end{definition}
 
-\begin{proposition}
+\begin{theorem}
+    \labthm{q-av}
     Every absolute value of $\Q$ is either the usual Euclidean absolute value or is equivalent to $|\cdot|_p$ for some prime $p$.
-\end{proposition}
+\end{theorem}
 
 From hereafter, $|\cdot|_\infty$ is used to denote the Euclidean absolute value.
 
@@ -379,4 +380,26 @@ Suppose that $K$ is a number field and $\mathfrak{p}$ is a nonzero prime ideal o
     In general, if $I$ is a prime ideal of a ring $R$, then one can define the localization of $R$ at $I$ by defining $S=R\sm I$ and considering the ring of fractions $S\inv R$.} 
 of $\mathcal{O}_{K}$ at $\mathfrak{p}$  is a PID. This follows from the fact that $\mathcal{O}_{K}$ is a Dedekind domain and any local Dedekind domain is a PID.\\
 
-Since the localization, say $\mathcal{O}_{K,\mathfrak{p}}$, is a PID we may choose a generator $\varpi$ of $\mathfrak{p} \mathcal{O}_{K,\mathfrak{p}}$.
+Since the localization, say $\mathcal{O}_{K,\mathfrak{p}}$, is a PID we may choose a generator $\varpi$ of $\mathfrak{p} \mathcal{O}_{K,\mathfrak{p}}$. Then,
+
+\[\mathcal{O}_{K,\mathfrak{p}} = \{0\} \cup \bigcup_{m\geq 0} \varpi^m \mathcal{O}_{K,\mathfrak{p}}^\times\]
+
+and 
+
+\[K = \{0\} \cup \bigcup_{m\in \Z} \varpi^m \mathcal{O}_{K,\mathfrak{p}}^\times.\]
+
+\begin{definition}[$\mathfrak{p}$-adic absolute value, $\mathfrak{p}$-adic norm]
+Define the $\mathfrak{p}$-adic absolute value or norm
+    \[|\cdot|_\mathfrak{p}: K \to \R_{\geq 0}\]
+by 
+    \[|\varpi^m a|_\mathfrak{p} = |\mathcal{O}_{K}/\mathfrak{p}|^{-m}\]
+where $m \in \Z$ and $a \in \mathcal{O}_{K,\mathfrak{p}}^\times$. Set $|0|_\mathfrak{p} = 0$.
+\end{definition}
+
+\begin{theorem}
+    \labthm{number-field-av}
+    Every nontrivial absolute value of a number field $K$ is either equivalent to $|\cdot|_\mathfrak{p}$ for some nonzero prime ideal $\mathfrak{p}$ of $\mathcal{O}_{K}$ or some composition $|\cdot|_{\C} \circ \tau$ with $\tau: K \to \C$.
+\end{theorem}
+
+\refthm{number-field-av} can be thought of as a generalization of \refthm{q-av}. The definitions for the $\mathfrak{p}$-adic norm replicate the construction of the $p$-adic norm and the $p$-adic integers. However, instead of restricting ourselves to prime numbers, we are now able to consider prime ideals.
+
