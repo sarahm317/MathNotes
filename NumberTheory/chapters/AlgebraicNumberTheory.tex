@@ -278,7 +278,7 @@ One can easily see that the set of units is $\Z_p^\times = \{a \in \Q_p: |a|_p =
     Two absolute values are equivalent if they induce the same topology.
 \end{definition}
 
-Using topological properties, one can show that two norms $|\cdot|_1, |\cdot|_2$ on $K$ are equivalent if and only if there exists $s \in \R_{>0}$ such that $|x|_1 = |x|_2^s$ for all $x \in K$. In particular, if there exists $x \in K$ where $|x|_1 \geq 1$ and $|x|_2 < 1$ the two norms are \emph{not} equivalent.
+Using topological properties, one can show that two absolute values $|\cdot|_1, |\cdot|_2$ on $K$ are equivalent if and only if there exists $s \in \R_{>0}$ such that $|x|_1 = |x|_2^s$ for all $x \in K$. In particular, if there exists $x \in K$ where $|x|_1 \geq 1$ and $|x|_2 < 1$ the two absolute values are \emph{not} equivalent.
 
 \begin{definition}[Additive valuation, Valuation]
     \labdef{additive-valuation}
@@ -359,5 +359,24 @@ of residue classes is an isomorphism.
         \[\ol{f}(x) = \ol{g}(x)\ol{h}(x)\]
     in $\mathcal{O}/\mathfrak{p}[x]$, with $\ol{g}(x)$ and $\ol{h}(x)$ coprime. Then, $f(x)$ has a factorization
         \[f(x) = g(x) h(x)\]
-    in $\mathcal{O}[x]$ such that $g(x) \equiv \ol{g}(x) \textrm{ mod}(\mathfrak{p})$ and $h(x) \equiv \ol{h}(x) \textrm{ mod}(\mathfrak{p})$.
+    in $\mathcal{O}[x]$ such that $g(x) \equiv \ol{g}(x) \textrm{ mod}(\mathfrak{p})$, $h(x) \equiv \ol{h}(x) \textrm{ mod}(\mathfrak{p})$, $\deg(g(x)) = \deg(\ol{g}(x))$, and $\deg(h(x)) = \deg(\ol{h}(x))$.
 \end{theorem}
+
+\section{Absolute Values of Finite Extensions}
+
+
+\begin{theorem}
+    Let $K$ be a field complete with respect to $|\cdot|$. Then $|\cdot|$ can be extended uniquely to an absolute value on any finite extension $L$ of $K$ by setting
+        \[|\alpha| = \left| \textrm{Nm}_{L/K}(\alpha)\right|^{\frac{1}{[L:K]}}\]
+    for each $\alpha \in L$.
+\end{theorem}
+
+One can check that $L$ is complete with respect to the defined norm. Also, if $K$ is a field complete with respect to some $|\cdot|$, then every element of $\textrm{Aut}(L/K)$ is a homeomorphism of $L$ with respect to the extension of $|\cdot|$. Finally, $|\cdot|$ can be extended uniquely to an absolute value on $\ol{K}$. However, it's not necessarily the case that $\ol{K}$ is complete with respect to the extension of the absolute value.
+
+\section{Absolute Values of Number Fields}
+
+Suppose that $K$ is a number field and $\mathfrak{p}$ is a nonzero prime ideal of $\mathcal{O}_{K}$. Then, the localization \sidenote{
+    In general, if $I$ is a prime ideal of a ring $R$, then one can define the localization of $R$ at $I$ by defining $S=R\sm I$ and considering the ring of fractions $S\inv R$.} 
+of $\mathcal{O}_{K}$ at $\mathfrak{p}$  is a PID. This follows from the fact that $\mathcal{O}_{K}$ is a Dedekind domain and any local Dedekind domain is a PID.\\
+
+Since the localization, say $\mathcal{O}_{K,\mathfrak{p}}$, is a PID we may choose a generator $\varpi$ of $\mathfrak{p} \mathcal{O}_{K,\mathfrak{p}}$.
