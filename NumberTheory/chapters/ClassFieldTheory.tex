@@ -6,12 +6,19 @@
 
 \begin{definition}[Local field]
     \labdef{local-field}
-    An archimedean local field is either $\R$ or $\C$. A nonarchimedean local field is a field complete with respect to a discrete valuation with the residue class field finite.
+    A local field is a field $K$ with a nontrivial absolute value $|\cdot|$ such that $K$ is locally compact with respect to $|\cdot|$.
 \end{definition}
+
+Requiring that $K$ is locally compact with respect to $|\cdot|$ implies that $K$ is complete with respect to $|\cdot|$. If $K = \R$ or $K = \C$, then $K$ is an archimedean local field. If the corresponding $|\cdot|$ has a discrete valuation with finite residue class field, then $K$ is a nonarchimedean local field.
 
 \begin{definition}[Global field]
     \labdef{global-field}
-    A global field is a number field or the function field of an algebraic curve over a finite field.
+    A global field is either:
+
+    \begin{enumerate}[(1)]
+        \item An algebraic number field.
+        \item A function field in one variable over a finite field.
+    \end{enumerate}
 \end{definition}
 
 A number field is always characteristic zero as it is defined as an extension over $\Q$. If the function field of an algebraic curve is taken over a finite field, it is the same as viewing it as a finite extension of some $\F_p(t)$ which is of nonzero (prime) characteristic.
@@ -21,3 +28,16 @@ A number field is always characteristic zero as it is defined as an extension ov
 \end{proposition}
 
 Class field theory describes relationships between the abelian extensions of a number field $K$ and the structure of $\mathcal{O}_{K}$.
+
+\begin{definition}[Unramified abelian extension]
+    A maximal unramified abelian extension of $K$ is an extension $L$ that is unramified at all primes and every real embedding $K \hookrightarrow \R$ extends to a real embedding $L \hookrightarrow \R$.
+\end{definition}
+
+\marginnote{Not sure exactly what was being defined here... Should revist later.}
+
+\begin{theorem}
+    Let $L$ be a maximal unramified abelian extension of $K$. Then there exists a canonical isomorphism
+
+    \[\textrm{Cl}(K)\xrightarrow{\cong} \textrm{Gal}(L/K).\]
+
+\end{theorem}
