@@ -88,12 +88,12 @@ For $K/\Q$, $\mathcal{O}_{\Q} = \Z$ and therefore is a PID. So, $\mathcal{O}_{K}
     \labdef{residue-class-degree}
     Let $L/K$ be an extension of number fields, $\wp  \sq \mathcal{O}_{L}$ a nonzero prime ideal, and define $\mathfrak{p} = \wp \cap \mathcal{O}_{K} \sq \mathcal{O}_{K}$. Write the prime factorization of $\mathfrak{p}\mathcal{O}_{L}$ as
     \[\mathfrak{p}\mathcal{O}_{L} = \wp _1^{e_1}\cdots \wp _m^{e_m}\]
-    where $\wp _1 = \wp $. The ramification index of $\wp $ over $\mathfrak{p}$, denoted by $e(\wp /\mathfrak{p})$, is defined to be $e_1$ (as given in the prime factorization). The residue class degree, or the intertia degree, of $\wp $ of $\mathfrak{p}$, denoted by $e(\wp /\mathfrak{p})$, is defined to be $[\mathcal{O}_{L}/\wp : \mathcal{O}_{K}/\mathfrak{p}]$.
+    where $\wp _1 = \wp $. The ramification index of $\wp $ over $\mathfrak{p}$, denoted by $e(\wp /\mathfrak{p})$, is defined to be $e_1$ (as given in the prime factorization). The residue class degree, or the intertia degree, of $\wp $ over $\mathfrak{p}$, denoted by $f(\wp /\mathfrak{p})$, is defined to be $[\mathcal{O}_{L}/\wp : \mathcal{O}_{K}/\mathfrak{p}]$.
 \end{definition}
 
 \begin{definition}[Ramified]
     \labdef{ramified}
-    Let $L/K$ be an extension of number fields and $\mathfrak{p} \sq \mathcal{O}_{K}$ a nonzero prime ideal. We say $\mathfrak{p}$ is ramified in $L$ or $L/K$ is ramified at $\mathfrak{p}$ if $e(\wp /\mathfrak{p}) > 1$ for some $\wp  \sq \mathcal{O}_{L}$ satisfying $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$. We say $\mathfrak{p}$ is unramified in $L$ or $L/K$ is unramified at $\mathfrak{p}$ if $e(\wp /\mathfrak{p}) =1$ for every $\wp  \sq \mathcal{O}_{L}$ where $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$.
+    Let $L/K$ be an extension of number fields and $\mathfrak{p} \sq \mathcal{O}_{K}$ a nonzero prime ideal. We say $\mathfrak{p}$ is ramified in $L$ or $L/K$ is ramified at $\mathfrak{p}$ if $e(\wp /\mathfrak{p}) > 1$ for some $\wp  \sq \mathcal{O}_{L}$ satisfying $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$. We say $\mathfrak{p}$ is unramified in $L$ or $L/K$ is unramified at $\mathfrak{p}$ if $f(\wp /\mathfrak{p}) =1$ for every $\wp  \sq \mathcal{O}_{L}$ where $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$.
 \end{definition}
 
 \begin{definition}[Splits, Splits completely]
@@ -195,6 +195,7 @@ For a number field $K$, let $r_k$ denote the number of real embeddings of $K$ in
 \section{Ramification}
 
 \begin{theorem}
+    \labthm{subextensions-are-unramified}
     Let $L/K$ and $K'/K$ be two extensions lying within an algebraic closure $\ol{K}/K$. Define $L' = LK'$. If $L/K$ is unramified, then $L'/K'$ is unramified. That is, every subextension of an unramified extensions is unramified.
 \end{theorem}
 \section{Valuations and Absolute Values}

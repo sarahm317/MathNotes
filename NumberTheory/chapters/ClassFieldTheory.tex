@@ -36,8 +36,59 @@ Class field theory describes relationships between the abelian extensions of a n
 \marginnote{Not sure exactly what was being defined here... Should revist later.}
 
 \begin{theorem}
+    \labthm{class-group-galois-group}
     Let $L$ be a maximal unramified abelian extension of $K$. Then there exists a canonical isomorphism
 
     \[\textrm{Cl}(K)\xrightarrow{\cong} \textrm{Gal}(L/K).\]
 
 \end{theorem}
+
+The canonical isomorphism in \refthm{class-group-galois-group} can be described as follows:
+
+Consider the diagram:
+
+    \[\begin{tikzcd}[column sep=small]
+        \label{setup}
+        L & \lar[dash, "\supseteq"'] \mathcal{O}_{L} & \lar[dash, "\supseteq"']\wp\\
+        K \uar[dash] & \lar[dash, "\supseteq"']\mathcal{O}_{K} &\lar[dash, "\supseteq"']\mathfrak{p}
+    \end{tikzcd}\]
+where $\wp$ is a nonzero prime ideal of $\mathcal{O}_{L}$ and $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$. Define $\lambda = \mathcal{O}_{L}/\wp$ and $\kappa = \mathcal{O}_{K}/\mathfrak{p}$. There exists a natural map
+    \[G_\wp \to \textrm{Aut}(\lambda/\kappa)\]
+If $\sigma \in G_\wp \sq \textrm{Gal}(L/K)$ then $\sigma(\wp) = \wp$ (and in particular, $\sigma(\mathfrak{p}) = \mathfrak{p})$. Define an element $\varphi_\sigma$ of $\textrm{Aut}(\lambda/\kappa)$ by
+    \[\varphi_\sigma: x + \wp \mapsto \sigma(x) + \wp\]
+noting that this map is well-defined since $\wp$ is fixed by $\sigma$. Furthmore, as $\sigma$ fixes elements in $K$, $\varphi_\sigma$ fixes elements of $\kappa$. Therefore, the map $G_\wp \to \textrm{Aut}(\lambda/\kappa)$ given by $\sigma \mapsto \varphi_\sigma$ is as desired.
+
+
+If $K_1/K$ and $K_2/K$ are both unramified abelian extensions, then $K_1K_2/K$ is an unramified abelian extension (see \refthm{subextensions-are-unramified}). This means that the maximal unramified abelian extension of $K$ can be well defined as the composition of all unramified abelian extensions of $K$.
+
+\begin{definition}[Hilbert class field]
+    \labdef{hilbert-class-field}
+    Let $K$ be a number field. The maximal unramified abelian extension of $K$ is called the Hilbert class field.
+\end{definition}
+
+Assuming the same notation and set up as \ref{setup}, we have the following result:
+
+\begin{proposition}
+    An extension $L/K$ is unramified if and only if the natural map $G_\wp \to \textrm{Aut}(\lambda/\kappa)$ is an isomorphism.
+\end{proposition}
+
+\begin{proof}
+    Note that $\mathfrak{p} \mathcal{O}_{L}$ has a unique factorization of the form:
+
+    \[\mathfrak{p}\mathcal{O}_{L} = \wp_1^{e_1}\cdots \wp_r^{e_r}\]
+
+    with $\wp_1 = \wp$. Consider the following two facts:
+
+    \begin{enumerate}[(1)]
+        \item $[L:K] = \sum_{j=1}^r e(\wp_j/\mathfrak{p})f(\wp_j/\mathfrak{p})$.
+        \item The Galois group $\textrm{Gal}(L/K)$ acts transitively on the collection $\{\wp_1, \ldots, \wp_r\}$. 
+    \end{enumerate}
+    Fact (2) means that there is a bijection between $\{\wp_1, \ldots, \wp_r\}$ and the $G_\wp$-cosets in $\textrm{Gal}(L/K)$. That is,
+        \[r = \frac{|\textrm{Gal}(L/K)}{|G_\wp|} = \frac{[L:K]}{|G_\wp|}.\]
+    Combining this with fact (1) yields
+        \[[L:K] = r \]
+    and since $r = \frac{[L:K]}{|G_\wp|}$,
+        \[|G_\wp| = e(\wp/\mathfrak{p})f(\wp/\mathfrak{p}) = e(\wp/\mathfrak{p})[\lambda:\kappa].\]
+\end{proof}
+
+\marginnote{I'm confused on the first couple lines of the proof here. Why do we know that the ramification indexes are all equal? How does transitivity give a relationship to the $G_\wp$ cosets in $\textrm{Gal}(L/K)$?}
