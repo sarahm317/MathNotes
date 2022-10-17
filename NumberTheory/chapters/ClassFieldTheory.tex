@@ -69,9 +69,12 @@ If $K_1/K$ and $K_2/K$ are both unramified abelian extensions, then $K_1K_2/K$ i
 Assuming the same notation and set up as \ref{setup}, we have the following result:
 
 \begin{proposition}
+    \labprop{unramified-criterion}
     An extension $L/K$ is unramified if and only if the natural map $G_\wp \to \textrm{Aut}(\lambda/\kappa)$ is an isomorphism.
 \end{proposition}
-
+\marginnote{\begin{remark}
+    Need to add more details for the proof here -- a lot is missing.
+\end{remark}}
 \begin{proof}
     Note that $\mathfrak{p} \mathcal{O}_{L}$ has a unique factorization of the form:
 
@@ -85,10 +88,43 @@ Assuming the same notation and set up as \ref{setup}, we have the following resu
     \end{enumerate}
     Fact (2) means that there is a bijection between $\{\wp_1, \ldots, \wp_r\}$ and the $G_\wp$-cosets in $\textrm{Gal}(L/K)$. That is,
         \[r = \frac{|\textrm{Gal}(L/K)}{|G_\wp|} = \frac{[L:K]}{|G_\wp|}.\]
+
+        \marginnote{I'm confused on the first couple lines of the proof here. Why do we know that the ramification indexes are all equal? How does transitivity give a relationship to the $G_\wp$ cosets in $\textrm{Gal}(L/K)$?}
     Combining this with fact (1) yields
         \[[L:K] = r \]
     and since $r = \frac{[L:K]}{|G_\wp|}$,
         \[|G_\wp| = e(\wp/\mathfrak{p})f(\wp/\mathfrak{p}) = e(\wp/\mathfrak{p})[\lambda:\kappa].\]
 \end{proof}
 
-\marginnote{I'm confused on the first couple lines of the proof here. Why do we know that the ramification indexes are all equal? How does transitivity give a relationship to the $G_\wp$ cosets in $\textrm{Gal}(L/K)$?}
+
+
+
+
+Suppose that $\mathfrak{p}$ is unramified in  $L/K$. \refprop{unramified-criterion} implies that there is an isomorphism between $G_\wp$ and $\textrm{Gal}(\lambda/\kappa)$. The Galois group is cyclic and thus has a generator $\textrm{Fr}: \lambda \to \lambda$ where $\textrm{Fr}: x \mapsto x^{|\kappa|}$. This generator is called the \textbf{Frobenius element} and is denoted by $\textrm{Frob}_\wp$.\\
+
+As the Galois group $\textrm{Gal}(L/K)$ acts transitively on the collection of prime ideals lying above $\mathfrak{p}$, given any $\wp' \sq \mathcal{O}_{L}$ lying above $\mathfrak{p}$, there exists $\sigma \in \textrm{Gal}(L/K)$ with $\wp' = \sigma(\wp)$. It can be verified that
+
+\[\textrm{Frob}_{\wp'} = \sigma \textrm{Frob}_\wp\sigma\inv\]
+
+meaning that $\textrm{Frob}_{\wp}$ and $\textrm{Frob}_{\wp'}$ are in the same conjugacy class in $\textrm{Gal}(L/K)$. This means that the following definition is well-defined:
+
+\begin{definition}[Frobenius of $\mathfrak{p}$]
+    \labdef{frobenius-of-p}
+    Let $\mathfrak{p}$ and $\wp$ be nonzero prime ideals such that $\mathfrak{p} = \wp\cap \mathcal{O}_{K}$. The Frobenius of $\mathfrak{p}$, denoted by $\textrm{Frob}_{\mathfrak{p}}$, is the conjugacy class of $\textrm{Gal}(L/K)$ that contains $\textrm{Frob}_\wp$.
+\end{definition}
+
+When $L/K$ is an abelian extension, the conjugacy class is a single element. Therefore, instead of referring to the conjugacy class as the Frobenius of $\mathfrak{p}$, we refer to the element in the conjugacy class as the Frobenius of $\mathfrak{p}$. We maintain the same notation.
+
+When $L/K$ is an unramified abelian extension, then the group homomorphism
+    \[I_K \to \textrm{Gal}(L/K)\]
+with
+    \[\mathfrak{p} \mapsto \textrm{Frob}_{\mathfrak{p}}\]
+is well-defined. This motivates the following theorem:
+
+\begin{theorem}
+    Suppose that $L$ is the maximal unramified abelian extension of $K$. Then the group homomorphism $I_K \to \textrm{Gal}(L/K)$ is surjective and has kernel $P_K$.
+\end{theorem}
+
+\begin{corollary}
+    Let $\mathfrak{p}$ be a prime ideal of $K$ and $L$ the Hilbert class field of $K$. Then, $\mathfrak{p}$ splits in $L$ if and only if $\mathfrak{p}$ is a principal ideal.
+\end{corollary}
