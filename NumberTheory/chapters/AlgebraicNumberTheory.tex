@@ -31,7 +31,7 @@
     The ring $\mathcal{O}_{K}$ is Noetherian, integrally closed, and every nonzero prime ideal of $\mathcal{O}_{K}$ is maximal.
 \end{proposition}
 
-Notice that the results presented in the proposition above imply that $\mathcal{O}_{K}$ is a Dedekind domain, using one of the many equivalent defintions of a Dedekind domain.
+Notice that the results presented in the proposition above imply that $\mathcal{O}_{K}$ is a Dedekind domain, using one of the many equivalent definitions of a Dedekind domain.
 
 \begin{theorem}[Unique Factorization of Ideals]
     \labthm{uniqueFactIdeals}
@@ -91,6 +91,7 @@ For $K/\Q$, $\mathcal{O}_{\Q} = \Z$ and therefore is a PID. So, $\mathcal{O}_{K}
     where $\wp _1 = \wp $. The ramification index of $\wp $ over $\mathfrak{p}$, denoted by $e(\wp /\mathfrak{p})$, is defined to be $e_1$ (as given in the prime factorization). The residue class degree, or the intertia degree, of $\wp $ over $\mathfrak{p}$, denoted by $f(\wp /\mathfrak{p})$, is defined to be $[\mathcal{O}_{L}/\wp : \mathcal{O}_{K}/\mathfrak{p}]$.
 \end{definition}
 
+
 \begin{definition}[Ramified]
     \labdef{ramified}
     Let $L/K$ be an extension of number fields and $\mathfrak{p} \sq \mathcal{O}_{K}$ a nonzero prime ideal. We say $\mathfrak{p}$ is ramified in $L$ or $L/K$ is ramified at $\mathfrak{p}$ if $e(\wp /\mathfrak{p}) > 1$ for some $\wp  \sq \mathcal{O}_{L}$ satisfying $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$. We say $\mathfrak{p}$ is unramified in $L$ or $L/K$ is unramified at $\mathfrak{p}$ if $f(\wp /\mathfrak{p}) =1$ for every $\wp  \sq \mathcal{O}_{L}$ where $\mathfrak{p} = \wp \cap \mathcal{O}_{K}$.
@@ -146,9 +147,7 @@ One can define a multiplication on the collection of fractional ideals of $K$: i
     where the product is taken over all the nonzero prime ideals of $\mathcal{O}_{K}$, each $r_\mathfrak{p} \in \Z$, and almost every $r_\mathfrak{p}$ is zero.
 \end{proposition}
 
-\begin{remark}
-    With these definitions, $I_K$ is the free abelian group on the set of nonzero prime ideals of $\mathcal{O}_{K}$.
-\end{remark}
+With these definitions, $I_K$ is the free abelian group on the set of nonzero prime ideals of $\mathcal{O}_{K}$.
 
 Define a subgroup of $I_K$ by
     \[P_K = \left\{ (a) = a \mathcal{O}_{K}: a \in K^\times \right\}.\]
@@ -314,19 +313,18 @@ From hereafter, $|\cdot|_\infty$ is used to denote the Euclidean absolute value.
 \begin{definition}[Residue class field, Valuation ring]
     \labdef{residue-class-field}
     \labdef{valuation-ring}
-    Let $K$ be a field with valuation $\nu$. The local ring \sidenote{A \textbf{local ring} is a ring with a unique maximal ideal.}
-
+    Let $K$ be a field with valuation $\nu$. The local ring 
     \[ \mathcal{O} = \left\{x \in K: \nu(x) \geq 0\right\}\]
-
     is the valuation ring for $K$. The unique maximal ideal of $\mathcal{O}$ is 
         \[\mathfrak{p} \left\{x \in K: \nu(x) > 0\right\}\]
     the units are
         \[\mathcal{O}^\times = \left\{x \in K : \nu(x) = 0\right\}\]
     The field $\mathcal{O}/\mathfrak{p}$ is the residue class field of $\mathcal{O}$.
 \end{definition}
+\sidenote{A \textbf{local ring} is a ring with a unique maximal ideal.}
+
 
 \begin{definition}[Discrete valuation]
-
     \labdef{discrete-valuation}
     A valuation $\nu$ on $K$ is called discrete if $\nu(K^\times) = s\Z$ for some $s \in \R_{>0}$.
 \end{definition}
@@ -341,8 +339,8 @@ Alternatively, we can think of the uniformizer as follows: $\varpi$ is a uniform
 If $\nu$ is a discrete valuation, then it can be normalized to a valuation $\nu'(x) = s\inv \nu(x)$.  From this definition, $\nu$ and $\nu'$ are equivalent and $\nu'(K^\times) = \Z$. Once normalized, an element $\varpi$ is a uniformizer if and only if $\nu'(\varpi) = 1$.
 
 \begin{proposition}
-    Let $K$ be a field with a discrete valuation. Then, the corresponding valuation ring is a discrete valuation ring \sidenote{A discrete valuation ring is a local PID that is not a field.}.
-\end{proposition}
+    Let $K$ be a field with a discrete valuation. Then, the corresponding valuation ring is a discrete valuation ring .
+\end{proposition}\sidenote{A discrete valuation ring is a local PID that is not a field.}
 
 \subsection{Completions}
 
@@ -352,6 +350,7 @@ Now that a field $K$ can be equipped with a norm, we can construct a completion 
     \labdef{complete}
     The pair $(K, |\cdot|)$ is complete if every Cauchy sequence converges in $K$ (with respect to the $|\cdot|$ norm.)
 \end{definition}
+
 
 Given any $(K, |\cdot|)$, we can always find a completion $\hat{K}$ and naturally extend $|\cdot|$ to $\hat{K}$. This new pair, $(\hat{K}, |\cdot|)$ is a complete valued field. When the absolute value $|\cdot|$ is nonarchimedean, the natural embedding
     \[\mathcal{O}_{K}/\mathfrak{p} \hookrightarrow \mathcal{O}_{\hat{K}}/\mathfrak{p}_{\hat{K}}\]
